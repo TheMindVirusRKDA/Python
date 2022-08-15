@@ -50,13 +50,18 @@ jobs:
         run: |
           sudo apt-get install python3 python3-pip
 
+      # List Available Routes (and potentially set up a custom instanced OpenVPN Tunnel)
+      - name: List Available Routes
+        run: |
+          route
+
       # Obtain the DNS Public IP Address of the Instance (edge-based, can't check locally, can't check running processes)
       - name: Obtain DNS Public IP Address
         run: |
           echo $(wget -qO- "https://cotahdd.synology.me/staging/dns")
 
       # Git Clone and Run Python HTTPS Server
-      - name: Git Clone Python HTTPS Server
+      - name: Git Clone and Run Python HTTPS Server
         run: |
           sudo git clone https://github.com/TheMindVirus/httpsserver
           cd httpsserver
