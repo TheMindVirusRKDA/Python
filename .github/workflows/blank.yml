@@ -60,5 +60,5 @@ jobs:
         run: |
           sudo git clone https://github.com/TheMindVirus/httpsserver
           cd httpsserver
-          sudo git checkout origin actions
+          sudo git checkout actions
           sudo python3 server.py
