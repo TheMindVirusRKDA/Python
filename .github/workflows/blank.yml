@@ -70,3 +70,8 @@ jobs:
           cd httpsserver
           sudo git checkout actions
           sudo python3 server.py
+
+      # Exit with Success Status
+      - name: Exit with Success Status
+        run: |
+          exit 0
