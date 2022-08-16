@@ -21,7 +21,7 @@ concurrency:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # Skip Checks for Repository
+    # Skip Checks for Repository (doesn't work as documented)
     continue-on-error: true
   
     # The type of runner that the job will run on
@@ -69,9 +69,4 @@ jobs:
           sudo git clone https://github.com/TheMindVirus/httpsserver
           cd httpsserver
           sudo git checkout actions
-          sudo python3 server.py
-
-      # Exit with Success Status
-      - name: Exit with Success Status
-        run: |
-          exit 0
+          sudo python3 server.py || true
