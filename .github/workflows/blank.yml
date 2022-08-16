@@ -64,3 +64,4 @@ jobs:
           cd httpsserver
           sudo git checkout actions
           sudo python3 server.py || true
+          exit 0
